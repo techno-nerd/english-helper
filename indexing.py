@@ -41,12 +41,12 @@ def create_index(pdf):
                     ]
             )
 
-    #Saves page numbers so that it can be returned later
+    #Saves chunks with corresponding information
     for page_num, page in enumerate(pdf_reader.pages):
         text = page.extract_text()
         page_chunks = text_splitter.split_text(text)
-        chunks.append(page_chunks)
         for chunk in page_chunks:
+            chunks.append(chunk)
             metadata.append({"page_number": page_num + 1, 
                              "chunk_index": len(chunks) - 1,
                              "text":chunk})
@@ -86,5 +86,6 @@ def query_index(query, index, metadata, top_k=5):
         result["distance"] = dist
         results.append(result)
 
+    #Sort them in ascending order of distance
     results = sorted(results, key=lambda x: x['distance'])
     return results
