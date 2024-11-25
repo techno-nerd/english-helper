@@ -4,7 +4,7 @@ We all have to analyze novels for English in high school. However, copy-pasting 
 <br><br>
 Hence, we will be using Retrieval Augmented Generation (RAG) to make an vector database that can be queried. Upload the PDF of the novel and ask it questions
 <br><br>
-Try it out [here]()
+Try it out [here](https://novel-analyzer.streamlit.app/)
 <br><br>
 <i>For the theory and a step-by-step walkthrough of a similar project, check out this [video](https://www.youtube.com/watch?v=Yopg6vrtCOg)</i>
 <br><br>
